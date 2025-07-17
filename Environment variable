@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+environment{
+    Name='Ugesh'
+}
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+                echo 'Declared Environment'
+                echo "${env.Name}"
+            }
+        }
+    stage('Buildin'){
+        steps{
+            echo 'build in varibales'
+            echo "${env.BUILD_NUMBER}"
+            echo "${env.BUILD_ID}"
+        }
+    }
+}
+}
