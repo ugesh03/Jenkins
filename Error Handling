@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Error Handling') {
+            steps {
+                script {
+                    try {
+                        ech 'Syntax'  // Fixed typo
+                    } catch (err) {
+                        echo "error: ${err}"  // Use double quotes for variable
+                        error('stopping pipeline')  // Lowercase 'error'
+                    }
+                }
+            }
+            post {
+                always {
+                    echo 'always block'
+                }
+                success {
+                    echo 'passed'
+                }
+                failure {
+                    echo 'failure'
+                }
+            }
+        }
+    }
+}
