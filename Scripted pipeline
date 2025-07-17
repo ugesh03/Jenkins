@@ -1,0 +1,11 @@
+node{
+    stage('Hello'){
+        echo'Ugesh from Jenkins Master Server'
+    }
+    stage('Date'){
+    sh 'date'
+    }
+    stage('Last'){
+        sh'last'
+    }
+}
