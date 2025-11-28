@@ -32,13 +32,13 @@ Connect to the EC2 server using SSH (via PuTTY or terminal).
 Run the following commands after connecting to the instance:
   sudo yum update -y
   sudo yum upgrade -y
-Install Java 21
+  Install Java 21
   sudo yum install java-21-openjdk java-21-openjdk-devel -y
-Install Git
+  Install Git
   sudo yum install git -y
-Install Maven
+  Install Maven
   sudo yum install maven -y
-Install wget
+  Install wget
   sudo yum install wget -y
 
 
