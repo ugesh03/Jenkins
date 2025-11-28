@@ -11,7 +11,7 @@ Troubleshooting common issues
 
 This setup is ideal for CI/CD pipeline beginners, DevOps learners, or anyone wanting to automate Java builds using Jenkins.
 
-🖥️ 1. AWS EC2 Setup
+#🖥️ 1. AWS EC2 Setup
 1.1 Launch an EC2 Instance
 Use the following recommended configuration:
 Setting	Value
@@ -24,25 +24,25 @@ Required Ports	22 (SSH), 80 (HTTP), 8080 (Jenkins)
 ⚠️ Note: Port 8080 is required to access Jenkins.
 
 
-🔗 2. Connect to the Instance
+#🔗 2. Connect to the Instance
 Connect to the EC2 server using SSH (via PuTTY or terminal).
 
 
-📦 3. Install Required Software
+#📦 3. Install Required Software
 Run the following commands after connecting to the instance:
-sudo yum update -y
-sudo yum upgrade -y
-# Install Java 21
-sudo yum install java-21-openjdk java-21-openjdk-devel -y
-# Install Git
-sudo yum install git -y
-# Install Maven
-sudo yum install maven -y
-# Install wget
-sudo yum install wget -y
+  sudo yum update -y
+  sudo yum upgrade -y
+Install Java 21
+  sudo yum install java-21-openjdk java-21-openjdk-devel -y
+Install Git
+  sudo yum install git -y
+Install Maven
+  sudo yum install maven -y
+Install wget
+  sudo yum install wget -y
 
 
-⚙️ 4. Install Jenkins
+#⚙️ 4. Install Jenkins
 4.1 Add Jenkins Repository & Import GPG Key
 sudo yum upgrade -y
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
@@ -55,7 +55,7 @@ sudo systemctl start jenkins
 sudo systemctl status jenkins
 
 
-🌐 5. Access Jenkins Web Interface
+#🌐 5. Access Jenkins Web Interface
 Open your browser and visit:
 http://<EC2-Public-IP>:8080
 Retrieve the initial admin password:
@@ -63,7 +63,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 Complete Jenkins setup and create your admin user.
 
 
-🔌 6. Install Essential Jenkins Plugins
+#🔌 6. Install Essential Jenkins Plugins
 It’s recommended to install:
 Git Plugin
 Pipeline Plugin
@@ -72,7 +72,7 @@ Maven Integration Plugin
 Stage View Plugin
 
 
-🔧 7. Configure Maven in Jenkins
+#🔧 7. Configure Maven in Jenkins
 Go to Manage Jenkins → Global Tool Configuration
 Under Maven, click Add Maven
 Provide:
@@ -82,7 +82,7 @@ Verify Maven install:
 mvn -v
 
 
-🛠️ 8. Build a Maven Project in Jenkins
+#🛠️ 8. Build a Maven Project in Jenkins
 8.1 Prepare Git Repository
 Ensure your Git repo contains a valid pom.xml.
 8.2 Create Jenkins Job
